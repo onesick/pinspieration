@@ -5,6 +5,8 @@
   <% @pins.each do |pin| %>
     <h3><%= pin.title %></h3>
     <%= image_tag "#{pin.pin_url}", alt: "#{pin.title} picture", class: "pin-picture" %>
+    <div><%= link_to "edit samir", edit_board_pin_path(@board, pin) %></div>
+    <div><%= link_to "delete samir", board_pin_path(@board, pin), method: "delete" %></div>
   <% end %>
 </ul>
 

@@ -1,2 +1,16 @@
 <h2><%= @board.title %></h2>
 <%= link_to "Input Samir here", new_board_pin_path(@board) %>
+
+<ul>
+  <% @pins.each do |pin| %>
+    <h3><%= pin.title %></h3>
+    <%= image_tag "#{pin.pin_url}", alt: "#{pin.title} picture", class: "pin-picture" %>
+    <div><%= link_to "edit samir", edit_board_pin_path(@board, pin) %></div>
+    <div><%= link_to "delete samir", board_pin_path(@board, pin), method: "delete" %></div>
+  <% end %>
+</ul>
+
+
+<h4>One Won</h4>
+<div><%= link_to "edit board", edit_board_path(@board) %></div>
+<div><%= link_to "delete board", board_path(@board), method: "delete" %></div>

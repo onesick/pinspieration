@@ -1,2 +1,12 @@
 <h2><%= @board.title %></h2>
 <%= link_to "Input Samir here", new_board_pin_path(@board) %>
+
+<ul>
+  <% @pins.each do |pin| %>
+    <h3><%= pin.title %></h3>
+    <%= image_tag "#{pin.pin_url}", alt: "#{pin.title} picture", class: "pin-picture" %>
+  <% end %>
+</ul>
+
+
+<h4>One Won</h4>

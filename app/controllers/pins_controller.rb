@@ -15,8 +15,8 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin=Pin.create(pin_params)
     @board=Board.find(params[:board_id])
+    @pin=@board.pins.create(pin_params)
     redirect_to board_pin_path(@board, @pin)
   end
 
